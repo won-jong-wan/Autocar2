@@ -43,7 +43,7 @@ def generate_launch_description():
 
         Node(
             package='cartographer_ros',
-            executable='occupancy_grid_node',
+            node_executable='occupancy_grid_node',
             name='occupancy_grid_node',
             output='screen',
             parameters=[{'use_sim_time': use_sim_time}],
