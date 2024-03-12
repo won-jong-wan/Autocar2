@@ -21,12 +21,12 @@ options = {
   map_builder = MAP_BUILDER,
   trajectory_builder = TRAJECTORY_BUILDER,
   map_frame = "map",
-  tracking_frame = "imu_link",
-  published_frame = "odom",
+  tracking_frame = "base_scan",
+  published_frame = "base_scan",
   odom_frame = "odom",
   provide_odom_frame = false,
   publish_frame_projected_to_2d = true,
-  use_odometry = true,
+  use_odometry = false,
   use_nav_sat = false,
   use_landmarks = false,
   num_laser_scans = 1,
@@ -54,7 +54,7 @@ TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
 TRAJECTORY_BUILDER_2D.motion_filter.max_angle_radians = math.rad(0.1)
 
 POSE_GRAPH.constraint_builder.min_score = 0.65
-POSE_GRAPH.constraint_builder.global_localization_min_score = 0.7
+POSE_GRAPH.constraint_builder.global_localization_min_score = 0.80
 
 -- POSE_GRAPH.optimize_every_n_nodes = 0
 
