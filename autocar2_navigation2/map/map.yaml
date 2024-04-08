@@ -1,4 +1,4 @@
-image: /home/soda/map.pgm
+image: map.pgm
 mode: trinary
 resolution: 0.05
 origin: [-5.34, -3.06, 0]
