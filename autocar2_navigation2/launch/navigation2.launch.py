@@ -26,6 +26,7 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    slam = LaunchConfiguration('slam', default='false')
     map_dir = LaunchConfiguration(
         'map',
         default=os.path.join(
@@ -64,12 +65,18 @@ def generate_launch_description():
             default_value='false',
             description='Use simulation (Gazebo) clock if true'),
 
+        DeclareLaunchArgument(
+            'slam',
+            default_value='false',
+            description='Use AMCL to localization'),
+
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([nav2_launch_file_dir, '/nav2_bringup_launch.py']),
             launch_arguments={
                 'map': map_dir,
                 'use_sim_time': use_sim_time,
-                'params_file': param_dir}.items(),
+                'params_file': param_dir,
+                'slam': slam}.items(),
         ),
 
         Node(
