@@ -24,7 +24,7 @@ find_package(sensor_msgs REQUIRED)
 #build
 add_executable(joy2teleop src/joy2teleop.cpp)
 target_include_directories(joy2teleop PRIVATE include)
-ament_target_dependencies(autocar2 rclcpp std_msgs geometry_msgs sensor_msgs)
+ament_target_dependencies(joy2teleop rclcpp std_msgs geometry_msgs sensor_msgs)
 
 ################################################################################
 # Install
