@@ -1,11 +1,11 @@
 #ifndef AUTOCAR2_BRINGUP__JOY2TELEOP_HPP_
 #define AUTOCAR2_BRINGUP__JOY2TELEOP_HPP_
 
+#include <memory>
+
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/joy.hpp"
 //#include "pop_interfaces/srv/moter.hpp"
-
-#include <memory>
 
 using std::placeholders::_1;
 
@@ -29,5 +29,14 @@ private:
   }
 
 };
-}  // namespace /* namespace_name */
+}
+
+int main(int argc, char * argv[])
+{
+  rclcpp::init(argc, argv);
+  rclcpp::spin(std::make_shared<joy2teleop::joy2teleop>());
+  rclcpp::shutdown();
+  return 0;
+}
+ // namespace /* namespace_name */
 #endif  // AUTOCAR2_BRINGUP__JOY2TELEOP_HPP_
