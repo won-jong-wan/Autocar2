@@ -24,10 +24,6 @@ def generate_launch_description():
         'launch', 'sllidar_a2m12_launch.py'))),
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
-        os.path.join(get_package_share_directory('autocar2_bringup'),
-        'launch', 'autocar2_state_publisher.launch.py'))),
-    IncludeLaunchDescription(
-      PythonLaunchDescriptionSource(
         os.path.join(get_package_share_directory('rf2o_laser_odometry'),
         'launch', 'rf2o.laser_odometry.launch.py'))),
     Node(
@@ -40,6 +36,10 @@ def generate_launch_description():
       node_executable='pop',
       name='pop',
       output='screen'),
+    IncludeLaunchDescription(
+      PythonLaunchDescriptionSource(
+        os.path.join(get_package_share_directory('autocar2_bringup'),
+        'launch', 'autocar2_state_publisher.launch.py'))),
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
         os.path.join(get_package_share_directory('nav2_bringup'),
