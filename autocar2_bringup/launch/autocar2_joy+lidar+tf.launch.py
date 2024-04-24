@@ -20,10 +20,6 @@ def generate_launch_description():
     # LaunchConfiguration('map')
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
-        os.path.join(get_package_share_directory('sllidar_ros2'),
-        'launch', 'sllidar_a2m12_launch.py'))),
-    IncludeLaunchDescription(
-      PythonLaunchDescriptionSource(
         os.path.join(get_package_share_directory('rf2o_laser_odometry'),
         'launch', 'rf2o.laser_odometry.launch.py'))),
     Node(
@@ -46,4 +42,8 @@ def generate_launch_description():
         'launch', 'nav2_localization_launch.py')),
       launch_arguments={'map': map_dir}.items(),
     ),
+    IncludeLaunchDescription(
+      PythonLaunchDescriptionSource(
+        os.path.join(get_package_share_directory('sllidar_ros2'),
+        'launch', 'sllidar_a2m12_launch.py'))),
   ])
