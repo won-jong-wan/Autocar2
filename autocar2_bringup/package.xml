@@ -10,8 +10,24 @@
   <license>Apache 2.0</license>
   <author email="jonwon2009@tukorea.ac.kr">Won Jong Wan</author>
   <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>rviz2</exec_depend>
+  <exec_depend>joystick_ros2</exec_depend>
+  <exec_depend>sllidar_ros2</exec_depend>
+  <exec_depend>pop_ros</exec_depend>
+  <exec_depend>nav2_bringup</exec_depend>
+  <exec_depend>rf2o_laser_odometry</exec_depend>
+  <exec_depend>jac_gric</exec_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
   <export>
     <build_type>ament_cmake</build_type>
   </export>
