@@ -42,8 +42,4 @@ def generate_launch_description():
         'launch', 'nav2_localization_launch.py')),
       launch_arguments={'map': map_dir}.items(),
     ),
-    IncludeLaunchDescription(
-      PythonLaunchDescriptionSource(
-        os.path.join(get_package_share_directory('sllidar_ros2'),
-        'launch', 'sllidar_a2m12_launch.py'))),
   ])
