@@ -10,28 +10,22 @@ from launch_ros.actions import Node
 
 
 def generate_launch_description():
-
+  bringup_dir = get_package_share_directory('autocar2_bringup')
   map_dir = os.path.join(get_package_share_directory('autocar2_bringup')
                                                        ,'map','map01.yaml')
+  params_file = LaunchConfiguration('params_file')
 
   return LaunchDescription([
-    DeclareLaunchArgument('map'
-                          , default_value=map_dir),
-    # LaunchConfiguration('map')
-    Node(
-      package='joystick_ros2',
-      node_executable='joystick_ros2',
-      name='joystick_ros2',
-      output='screen'),
-    Node(
-      package='pop_ros',
-      node_executable='pop',
-      name='pop',
-      output='screen'),
+    DeclareLaunchArgument(
+        'params_file',
+        default_value=os.path.join(bringup_dir, 'params', 'nav2_params.yaml'),
+        description='Full path to the ROS2 parameters file to use for all launched nodes'),
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
         os.path.join(get_package_share_directory('nav2_bringup'),
         'launch', 'nav2_localization_launch.py')),
-      launch_arguments={'map': map_dir}.items(),
+      launch_arguments={ 'params_file': params_file,
+                          'map_subscribe_transient_local': 'true',
+                          'map': map_dir,}.items(),
     ),
   ])
