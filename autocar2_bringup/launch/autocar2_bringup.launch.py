@@ -25,13 +25,11 @@ def generate_launch_description():
     Node(
       package='jac_gric',
       node_executable='joy2teleop',
-      name='joy2teleop',
-      output='screen',),
+      name='joy2teleop'),
     Node(
       package='rf2o_laser_odometry',
       node_executable='rf2o_laser_odometry_node',
       name='rf2o_laser_odometry',
-      output='screen',
       parameters=[{
                     'laser_scan_topic' : '/scan',
                     'odom_topic' : '/odom',

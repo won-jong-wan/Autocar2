@@ -14,8 +14,20 @@ def generate_launch_description():
   map_dir = os.path.join(get_package_share_directory('autocar2_bringup')
                                                        ,'map','map01.yaml')
   params_file = LaunchConfiguration('params_file')
+  
+  use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+
+  rviz_config_dir = os.path.join(get_package_share_directory('autocar2_bringup'),
+                                   'rviz', 'ac2_amcl.rviz')
 
   return LaunchDescription([
+    Node(
+            package='rviz2',
+            node_executable='rviz2',
+            name='rviz2',
+            arguments=['-d', rviz_config_dir],
+            parameters=[{'use_sim_time': use_sim_time}],
+            output='screen'),
     DeclareLaunchArgument(
         'params_file',
         default_value=os.path.join(bringup_dir, 'params', 'nav2_params.yaml'),

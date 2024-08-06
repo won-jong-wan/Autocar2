@@ -30,7 +30,7 @@ ament_target_dependencies(joy2teleop rclcpp std_msgs geometry_msgs sensor_msgs)
 # Install
 ################################################################################
 install(
-  DIRECTORY launch urdf meshes map params
+  DIRECTORY launch urdf meshes map params rviz
   DESTINATION share/${PROJECT_NAME}
 )
 
