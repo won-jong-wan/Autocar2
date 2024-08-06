@@ -1,0 +1,41 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "${default}",
+                "limitSymbolsToIncludedHeaders": false
+            },
+            "includePath": [
+                "/home/won/cartographer_ws/install/cartographer_rviz/include/**",
+                "/home/won/cartographer_ws/install/cartographer_ros/include/**",
+                "/home/won/cartographer_ws/install/cartographer_ros_msgs/include/**",
+                "/home/won/turtlebot3_ws/install/turtlebot3_fake_node/include/**",
+                "/home/won/turtlebot3_ws/install/turtlebot3_msgs/include/**",
+                "/home/won/turtlebot3_ws/install/turtlebot3_gazebo/include/**",
+                "/home/won/turtlebot3_ws/install/dynamixel_sdk_custom_interfaces/include/**",
+                "/home/won/turtlebot3_ws/install/dynamixel_sdk/include/**",
+                "/opt/ros/humble/include/**",
+                "/home/won/dev/dev_ws/src/gric_autocar2/include/**",
+                "/usr/include/**",
+                "/opt/ros/humble/include/rclcpp"
+            ],
+            "name": "ROS",
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "c++14"
+        },
+        {
+            "name": "ros",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
