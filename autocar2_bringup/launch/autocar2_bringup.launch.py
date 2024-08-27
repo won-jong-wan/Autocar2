@@ -23,7 +23,7 @@ def generate_launch_description():
       name='joystick_ros2',
       output='screen'),
     Node(
-      package='jac_gric',
+      package='autocar2_teleop',
       node_executable='joy2teleop',
       name='joy2teleop'),
     Node(

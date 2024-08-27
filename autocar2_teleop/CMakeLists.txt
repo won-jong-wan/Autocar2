@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(jac_gric)
+project(autocar2_teleop)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -16,17 +16,17 @@ find_package(sensor_msgs REQUIRED)
 find_package(pop_interfaces REQUIRED)
 
 #build
-add_executable(autocar2 src/gric_autocar2_node.cpp)
+add_executable(teleop_test src/teleop_test.cpp)
 #target_include_directories(autocar2 PRIVATE include)
 #target_link_libraries(autocar2 OpenXLSX::OpenXLSX)
-ament_target_dependencies(autocar2 rclcpp std_msgs geometry_msgs sensor_msgs pop_interfaces)
+ament_target_dependencies(teleop_test rclcpp std_msgs geometry_msgs sensor_msgs pop_interfaces)
 
 add_executable(joy2teleop src/joy2teleop.cpp)
 #target_include_directories(joy2tel PRIVATE include)
 ament_target_dependencies(joy2teleop rclcpp std_msgs sensor_msgs pop_interfaces)
 
 install(TARGETS
-  autocar2
+  teleop_test
   joy2teleop
   DESTINATION lib/${PROJECT_NAME}
 )

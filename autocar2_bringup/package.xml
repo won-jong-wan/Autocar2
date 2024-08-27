@@ -22,7 +22,7 @@
   <exec_depend>pop_ros</exec_depend>
   <exec_depend>nav2_bringup</exec_depend>
   <exec_depend>rf2o_laser_odometry</exec_depend>
-  <exec_depend>jac_gric</exec_depend>
+  <exec_depend>autocar2_teleop</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>jac_gric</name>
+  <name>autocar2_teleop</name>
   <version>0.0.0</version>
-  <description>autocar2 and xlsx</description>
+  <description>teleop for autocar2</description>
   <maintainer email="jonwon2009@gmail.com">won</maintainer>
   <license>MIT</license>
 
