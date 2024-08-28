@@ -25,11 +25,13 @@ def generate_launch_description():
     Node(
       package='autocar2_teleop',
       node_executable='joy2teleop',
-      name='joy2teleop'),
+      name='joy2teleop',
+      output='log'),
     Node(
       package='rf2o_laser_odometry',
       node_executable='rf2o_laser_odometry_node',
       name='rf2o_laser_odometry',
+      output='log',
       parameters=[{
                     'laser_scan_topic' : '/scan',
                     'odom_topic' : '/odom',
@@ -42,7 +44,7 @@ def generate_launch_description():
       package='pop_ros',
       node_executable='pop',
       name='pop',
-      output='screen'),
+      output='log'),
     IncludeLaunchDescription(
       PythonLaunchDescriptionSource(
         os.path.join(get_package_share_directory('autocar2_bringup'),
